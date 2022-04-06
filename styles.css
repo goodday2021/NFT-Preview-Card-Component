@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*tells the document that margin should be placed inside the elements and padding should be placed outside of the elements*/
+}
+
+:root {
+    --Very-dark-blue1: hsl(217, 54%, 11%); /*main background*/
+    --Very-dark-blue2: hsl(216, 50%, 16%); /*card background*/
+    --Very-dark-blue3: hsl(215, 32%, 27%); /*line*/
+    --White: hsl(0, 0%, 100%);
+    --Soft-blue: hsl(215, 51%, 70%);
+    --Cyan: hsl(178, 100%, 50%);
+}
+
+img {
+    max-width: 100%; /*for image to fit the screen even when the size of the screen changes*/
+}
+
+ul {
+    list-style-type: none; /*remove bulltet points*/
+}
+
+p {
+    font-weight: 300;
+}
+
+body {
+    font-family: "Outfit", sans-serif;
+    font-size: 18px;
+    background-color: var(--Very-dark-blue1);
+    color:hsl(0, 0%, 100%, 60%); /*text color*/
+    padding: 1.25rem;
+}
+
+.container {
+    background-color: var(--Very-dark-blue2); 
+    padding: 1.25rem;
+    border-radius: 0.625rem; 
+    margin-bottom: 2rem; 
+}
+
+.container .main-img {
+    position: relative;
+}
+
+.container .main-img div {
+    position: absolute;
+    top: 0;
+    background-color: hsl(178, 100%, 50%, 60%);
+    width: 100%;
+    height: calc(100% - 4px);
+    z-index: 999;
+    opacity: 0;
+    transition: opacity 0.25s ease-in-out;
+}
+
+.container .main-img div:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.container .main-img div img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.container h2 {
+    color: var(--White);
+    margin: 1rem 0.5rem 0.5rem 0; /*top, right, bottom, left*/
+}
+
+.container h2:hover {
+    color: var(--Cyan);
+    cursor: pointer;
+}
+/**/
+.container p {
+    color: var(--Soft-blue);
+}
+
+.container ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /*place each list from left and right side of container*/
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--Very-dark-blue3);
+}
+
+.container ul li {
+    display: flex; /*to align icon ethereum and clock to the corresponding text*/
+    align-items: center;
+}
+
+.container ul li:first-child {
+    color: var(--Cyan);
+}
+
+.container ul li img {
+    margin-right: 0.5rem;
+}
+
+.container .avatar {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding-top: 2rem;
+}
+
+.container .avatar img {
+    width: 3.5rem;
+    border: 2px solid var(--White);
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+.container .avatar p span {
+    color: var(--White);
+    font-weight: 400;
+}
+
+.container .avatar p span:hover {
+    color: var(--Cyan);
+    cursor: pointer;
+}
+
+.attribution {
+    font-size: 16px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+@media (min-width: 500px) {
+    .container {
+        width: 450px;
+        margin: 0 auto 1rem;
+    }
+}
